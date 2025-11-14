@@ -964,10 +964,10 @@ function Hero({ t }: { t: typeof translations.en.hero }) {
             <SparklesIcon className="h-3.5 w-3.5 text-[#2DE0CB]" />
             <span>{t.badge}</span>
           </div>
-          <h1 className="mx-auto max-w-3xl tracking-[-0.03em] font-normal text-4xl md:text-6xl bg-gradient-to-r from-[#2DE0CB] to-[#5B7CEF] bg-clip-text text-white">
+          <h1 className="mx-auto max-w-3xl tracking-[-0.03em] font-medium text-4xl md:text-6xl bg-gradient-to-r from-[#2DE0CB] to-[#5B7CEF] bg-clip-text text-white">
             {t.title}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg font-normal text-slate-400">{t.description}</p>
+          <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg font-regular text-slate-400">{t.description}</p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Magnetic>
               <Button className="bg-gradient-to-r from-[#2DE0CB] to-[#5B7CEF] text-[#0A0E14] hover:bg-teal-500 bg-teal-400 cursor-pointer">
@@ -1142,7 +1142,7 @@ function SolutionsOverview({ t }: { t: typeof translations.en.solutions }) {
     <motion.div {...fadeUp(0)} className="mx-auto max-w-[1200px] px-6 md:px-8">
       <div className="mb-10 text-center">
         <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">{t.title}</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-3xl">
+        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-medium tracking-tight text-balance text-white sm:text-3xl">
           {t.subtitle}
         </p>
       </div>
@@ -1193,7 +1193,7 @@ function LiveDemo({ t }: { t: typeof translations.en.demo }) {
   return (
     <motion.div {...fadeUp(0)} className="mx-auto max-w-[1200px] px-6 lg:px-8">
       <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">Intelligent Automation</h2>
-      <p className="mx-auto mt-2 max-w-lg text-center text-3xl font-semibold tracking-tight text-balance text-white">
+      <p className="mx-auto mt-2 max-w-lg text-center text-3xl font-medium tracking-tight text-balance text-white">
         {t.subtitle}
       </p>
 
@@ -1285,7 +1285,7 @@ function LiveDemo({ t }: { t: typeof translations.en.demo }) {
               </p>
             </div>
             <div className="relative min-h-[20rem] w-full grow flex items-center justify-center md:min-h-[30rem] p-8">
-              <ArchitectureCard />
+              <ArchitectureCard variant="balanced" />
             </div>
           </div>
           <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-white/10 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]" />
@@ -1495,7 +1495,7 @@ function AboutUs({ t }: { t: typeof translations.en.aboutUs }) {
       {/* Header */}
       <div className="mb-12 text-center max-w-3xl mx-auto">
         <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">{t.title}</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-3xl font-semibold tracking-tight text-balance text-white">
+        <p className="mx-auto mt-2 max-w-lg text-center text-3xl font-medium tracking-tight text-balance text-white">
           {t.subtitle}
         </p>
       </div>
@@ -1566,7 +1566,7 @@ function Integrations({ t }: { t: typeof translations.en.integrations }) {
     <motion.div {...fadeUp(0)} className="mx-auto max-w-[1200px] px-6 md:px-8">
       <div className="mb-10 text-center">
         <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">{t.title}</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-3xl">
+        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-medium tracking-tight text-balance text-white sm:text-3xl">
           {t.subtitle}
         </p>
       </div>
@@ -1578,7 +1578,7 @@ function Integrations({ t }: { t: typeof translations.en.integrations }) {
               className={`absolute inset-0 bg-gradient-to-br ${cat.color} rounded-2xl opacity-50 group-hover:opacity-70 transition-opacity blur-xl`}
             />
             <div className="relative rounded-2xl border border-white/10 bg-[#0A0E14]/90 backdrop-blur-sm p-6">
-              <h3 className="mb-4 text-sm font-semibold text-slate-200 flex items-center gap-2">
+              <h3 className="mb-4 font-semibold text-slate-200 flex items-center gap-2 text-base">
                 <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-[#2DE0CB] to-[#5B7CEF]" />
                 {cat.name}
               </h3>
@@ -1613,7 +1613,7 @@ function SecurityCompliance({ t }: { t: typeof translations.en.security }) {
     <motion.div {...fadeUp(0)} className="mx-auto max-w-[1200px] px-6 md:px-8">
       <div className="mb-12 text-center max-w-3xl mx-auto">
         <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">{t.title}</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-3xl">
+        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-medium tracking-tight text-balance text-white sm:text-3xl">
           {t.subtitle}
         </p>
       </div>
@@ -1711,7 +1711,7 @@ function CaseStudies({ t }: { t: typeof translations.en.outcomes }) {
     <motion.div {...fadeUp(0)} className="mx-auto max-w-[1200px] px-6 md:px-8">
       <div className="mb-8 text-center">
         <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">{t.title}</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-3xl">
+        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-medium tracking-tight text-balance text-white sm:text-3xl">
           {t.subtitle}
         </p>
       </div>
@@ -1786,7 +1786,7 @@ function Testimonials({ t }: { t: typeof translations.en.testimonials }) {
     <div className="mx-auto max-w-[1200px] px-6 md:px-8">
       <motion.div {...fadeUp(0)} className="mb-12 text-center">
         <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">{t.title}</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-3xl">
+        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-medium tracking-tight text-balance text-white sm:text-3xl">
           {t.subtitle}
         </p>
       </motion.div>
@@ -1847,7 +1847,7 @@ function FAQ({ t }: { t: typeof translations.en.faq }) {
     <motion.div {...fadeUp(0)} className="mx-auto max-w-[1200px] px-6 md:px-8">
       <div className="mb-16 text-center">
         <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">{t.title}</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white">
+        <p className="mx-auto mt-2 max-w-lg text-center text-3xl font-medium tracking-tight text-balance text-white">
           Everything you need to know about YUYAY AI Agents
         </p>
       </div>
@@ -2125,9 +2125,10 @@ function ListItem({ children }: React.PropsWithChildren) {
 }
 
 function MockTerminal() {
-  const fullText = `$ yuyay agents deploy --env=prod
-> Connecting tools: CRM, Helpdesk, Data Warehouse...
-> Policies: RBAC enabled, SOC2 mode ON`
+  const fullText = 
+  `$ yuyay agents upgrade --env=prod > Checking versioning, pulling latest...
+
+    > Integrations connected: CRM, Billing API, Knowledge Hub, Observability...`
 
   const [displayedText, setDisplayedText] = React.useState("")
   const [currentIndex, setCurrentIndex] = React.useState(0)
@@ -2166,18 +2167,38 @@ function MockTerminal() {
   )
 }
 
-function ArchitectureCard() {
+function ArchitectureCard({ variant = 'default' }: { variant?: 'default' | 'balanced' }) {
+  if (variant === 'balanced') {
+    return (
+      <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+        <div className="mb-4 text-base text-slate-300">High‑level Architecture</div>
+        <div className="grid grid-col gap-3 text-xs lg:text-base">
+          <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Connect</div>
+          <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Orchestrate</div>
+          <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Govern</div>
+          <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Deploy</div>
+          <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">
+            Measure
+          </div>
+        </div>
+        <div className="mt-4 rounded-md bg-gradient-to-r from-[#2DE0CB]/30 to-[#5B7CEF]/30 p-[1px]">
+          <div className="rounded-md bg-[#0C111B] p-3 text-xs lg:text-base text-center text-slate-400">
+            Secure data plane · Tooling · Policies
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="rounded-xl border border-white/10 bg-white/5 p-4">
       <div className="mb-4 text-base text-slate-300">High‑level Architecture</div>
-      <div className="grid grid-flow-row-dense gap-3 text-xs lg:text-base">
+      <div className="grid grid-cols md:grid-cols-3 lg:grid-cols-3 gap-3 text-xs lg:text-base">
         <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Connect</div>
         <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Orchestrate</div>
         <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Govern</div>
-        <div className="col-span-2 rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">
-          Deploy
-        </div>
-        <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Measure</div>
+        <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Deploy</div>
+        <div className="col-span md:col-span-2 rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Measure</div>
       </div>
       <div className="mt-4 rounded-md bg-gradient-to-r from-[#2DE0CB]/30 to-[#5B7CEF]/30 p-[1px]">
         <div className="rounded-md bg-[#0C111B] p-3 text-xs lg:text-base text-center text-slate-400">
