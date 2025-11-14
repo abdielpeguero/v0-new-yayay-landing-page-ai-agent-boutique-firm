@@ -7,7 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
-import { Check, Lock, Shield, SparklesIcon, ArrowRight, LucideArrowUpRight as LucideArrowUpRightIcon, TrendingUp, Gauge, Rocket, Target, Zap, Languages, Menu, X } from 'lucide-react'
+import { Check, Lock, Shield, SparklesIcon, ArrowRight, LucideArrowUpRight as LucideArrowUpRightIcon, TrendingUp, Gauge, Rocket, Target, Zap, Languages, Menu, X, ChevronUp } from 'lucide-react'
 import React from "react"
 import { AnimatePresence } from "framer-motion" // Imported for mobile menu animations
 
@@ -570,6 +570,7 @@ function Preflight() {
 export default function Page() {
   const [language, setLanguage] = React.useState<"en" | "es">("en")
   const [activeSection, setActiveSection] = React.useState<string>("")
+  const [showScrollTop, setShowScrollTop] = React.useState(false)
   const t = translations[language]
 
   const prefersReducedMotion = useReducedMotion()
@@ -608,6 +609,21 @@ export default function Page() {
     }
   }, [])
 
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.getElementById("hero")
+      if (heroSection) {
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight
+        setShowScrollTop(window.scrollY > heroBottom)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    handleScroll() // Check initial state
+
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   const nx = size.w ? (cursor.x - size.w / 2) / (size.w / 2) : 0
   const ny = size.h ? (cursor.y - size.h / 2) / (size.h / 2) : 0
 
@@ -626,6 +642,10 @@ export default function Page() {
     },
     [prefersReducedMotion],
   )
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" })
+  }
 
   return (
     <main onMouseMove={handleMouseMove} className="relative min-h-screen bg-[#0A0E14] text-slate-200 font-sans">
@@ -654,6 +674,23 @@ export default function Page() {
       </div>
 
       <Navbar onNav={handleNav} language={language} setLanguage={setLanguage} t={t.nav} activeSection={activeSection} />
+      
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.2 }}
+            onClick={scrollToTop}
+            className="fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-[#0A0E14]/80 transition delay-10 duration-300 ease-in-out hover:bg-[#192333]/80 backdrop-blur text-slate-300 hover:text-white hover:bg-[#0A0E14]/90 transition-colors"
+            aria-label="Scroll to top"
+          >
+            <ChevronUp className="h-5 w-5" />
+          </motion.button>
+        )}
+      </AnimatePresence>
+
       <div id="page-body">
         <Preflight />
         <Hero t={t.hero} />
