@@ -1911,7 +1911,7 @@ function FinalCTAContent({ t }: { t: typeof translations.en.cta }) {
               </label>
               <Magnetic>
                 <Button className="bg-gradient-to-r from-[#2DE0CB] to-[#5B7CEF] text-[#0A0E14] hover:bg-teal-500 bg-teal-400">
-                  {t.form.submit} <ArrowRight className="ml-1 h-4 w-4" />
+                  {t.form.submit}
                 </Button>
               </Magnetic>
             </div>
