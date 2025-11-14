@@ -1847,7 +1847,7 @@ function FAQ({ t }: { t: typeof translations.en.faq }) {
     <motion.div {...fadeUp(0)} className="mx-auto max-w-[1200px] px-6 md:px-8">
       <div className="mb-16 text-center">
         <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">{t.title}</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-medium tracking-tight text-balance text-white">
+        <p className="mx-auto mt-2 max-w-lg text-center text-3xl font-medium tracking-tight text-balance text-white">
           Everything you need to know about YUYAY AI Agents
         </p>
       </div>
