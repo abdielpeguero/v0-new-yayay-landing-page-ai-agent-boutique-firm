@@ -2125,9 +2125,12 @@ function ListItem({ children }: React.PropsWithChildren) {
 }
 
 function MockTerminal() {
-  const fullText = `$ yuyay agents deploy --env=prod
-> Connecting tools: CRM, Helpdesk, Data Warehouse...
-> Policies: RBAC enabled, SOC2 mode ON`
+  const fullText = 
+  `$ yuyay agents upgrade --env=prod > Checking versioning, pulling latest models and policy updates...
+
+    > Integrations connected: CRM, Billing API, Knowledge Hub, Observability...
+
+    > Governance suite enabled: RBAC..........`
 
   const [displayedText, setDisplayedText] = React.useState("")
   const [currentIndex, setCurrentIndex] = React.useState(0)
