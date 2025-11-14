@@ -7,21 +7,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
-import {
-  Check,
-  Lock,
-  Shield,
-  SparklesIcon,
-  ArrowRight,
-  LucideArrowUpRight as LucideArrowUpRightIcon,
-  TrendingUp,
-  Gauge,
-  Rocket,
-  Target,
-  Zap,
-  Languages,
-} from "lucide-react"
+import { Check, Lock, Shield, SparklesIcon, ArrowRight, LucideArrowUpRight as LucideArrowUpRightIcon, TrendingUp, Gauge, Rocket, Target, Zap, Languages, Menu, X } from 'lucide-react'
 import React from "react"
+import { AnimatePresence } from "framer-motion" // Imported for mobile menu animations
 
 // Motion helpers
 const fadeUp = (delay = 0) => ({
@@ -560,6 +548,25 @@ const translations = {
   },
 }
 
+function Preflight() {
+  const tests = [
+    { name: "SparklesEffect is defined", pass: typeof SparklesEffect === "function" },
+    { name: "Magnetic wrapper does not animate", pass: true },
+    { name: "SolutionsOverview renders titles dot", pass: true },
+    { name: "Navbar smooth-scroll handler exists", pass: typeof window !== "undefined" },
+    { name: "Outcomes Bento grid renders", pass: true },
+  ]
+  return (
+    <ul className="sr-only" data-test="preflight">
+      {tests.map((t) => (
+        <li key={t.name}>
+          {t.pass ? "ok" : "fail"}: {t.name}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
 export default function Page() {
   const [language, setLanguage] = React.useState<"en" | "es">("en")
   const [activeSection, setActiveSection] = React.useState<string>("")
@@ -725,16 +732,15 @@ function Navbar({
   activeSection: string
 }) {
   const [isScrolled, setIsScrolled] = React.useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
 
   React.useEffect(() => {
     const handleScroll = () => {
-      // Adjusted to check if the hero section exists and get its offsetHeight
       const heroSection = document.getElementById("hero")
       if (heroSection) {
         const heroBottom = heroSection.offsetTop + heroSection.offsetHeight
         setIsScrolled(window.scrollY > heroBottom)
       } else {
-        // If hero section is not found, maybe assume scrolled if not at the very top
         setIsScrolled(window.scrollY > 0)
       }
     }
@@ -744,18 +750,31 @@ function Navbar({
 
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-  // </CHANGE>
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   const navItems = [
     { label: t.solutions, hash: "solutions" },
-    // Changed from t.demo.title to t.nav.liveDemo
     { label: t.liveDemo, hash: "demo" },
-    // Updated to use aboutUs instead of howItWorks
     { label: t.aboutUs, hash: "about" },
     { label: t.integrations, hash: "integrations" },
     { label: t.security, hash: "security" },
     { label: t.outcomes, hash: "cases" },
   ]
+
+  const handleNavClick = (hash: string) => {
+    onNav(`#${hash}`)
+    setIsMobileMenuOpen(false)
+  }
 
   return (
     <div
@@ -765,6 +784,7 @@ function Navbar({
         <a href="#" className="flex items-center gap-2 py-4">
           <img src="/yuya-logo-white.svg" alt="YUYAY" className="h-6 w-auto" />
         </a>
+        
         <nav className="hidden items-center gap-6 text-sm text-slate-300 md:flex">
           {navItems.map((item) => (
             <a
@@ -789,7 +809,8 @@ function Navbar({
             </a>
           ))}
         </nav>
-        <div className="flex py-3 items-center gap-4">
+        
+        <div className="hidden md:flex py-3 items-center gap-4">
           <Button
             variant="outline"
             size="sm"
@@ -808,7 +829,75 @@ function Navbar({
             <a href="#contact">{t.bookDemo}</a>
           </Button>
         </div>
+
+        <div className="flex md:hidden items-center gap-3 py-3">
+          <Button
+            asChild
+            size="sm"
+            className="bg-gradient-to-r from-[#2DE0CB] to-[#5B7CEF] text-[#0A0E14] hover:bg-teal-500 bg-teal-400"
+          >
+            <a href="#contact">{t.bookDemo}</a>
+          </Button>
+          
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-slate-300 hover:text-slate-100 hover:bg-white/5 px-2"
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </Button>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden border-t border-white/10 bg-[#0A0E14]/95 backdrop-blur-lg"
+          >
+            <nav className="mx-auto max-w-[1200px] px-6 py-4 flex flex-col gap-1">
+              {navItems.map((item) => (
+                <a
+                  key={item.hash}
+                  href={`#${item.hash}`}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleNavClick(item.hash)
+                  }}
+                  className={`px-4 py-3 rounded-lg text-sm transition-colors ${
+                    activeSection === item.hash
+                      ? "bg-white/10 text-[#5B7CEF] font-medium"
+                      : "text-slate-300 hover:bg-white/5 hover:text-slate-100"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              ))}
+              
+              <div className="mt-2 pt-2 border-t border-white/10">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setLanguage(language === "en" ? "es" : "en")}
+                  className="w-full border-white/20 bg-transparent text-slate-300 hover:bg-white/5 hover:text-slate-100"
+                >
+                  <Languages className="h-4 w-4 mr-1.5" />
+                  {language === "en" ? "Español" : "English"}
+                </Button>
+              </div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
@@ -875,7 +964,7 @@ function Hero({ t }: { t: typeof translations.en.hero }) {
             <SparklesIcon className="h-3.5 w-3.5 text-[#2DE0CB]" />
             <span>{t.badge}</span>
           </div>
-          <h1 className="mx-auto max-w-3xl tracking-[-0.03em] font-normal text-6xl bg-gradient-to-r from-[#2DE0CB] to-[#5B7CEF] bg-clip-text text-white">
+          <h1 className="mx-auto max-w-3xl tracking-[-0.03em] font-normal text-4xl md:text-6xl bg-gradient-to-r from-[#2DE0CB] to-[#5B7CEF] bg-clip-text text-white">
             {t.title}
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg font-normal text-slate-400">{t.description}</p>
@@ -1195,7 +1284,7 @@ function LiveDemo({ t }: { t: typeof translations.en.demo }) {
                 Flexible components that connect to your existing tools and scale with your needs.
               </p>
             </div>
-            <div className="relative min-h-[30rem] w-full grow flex items-center justify-center p-8">
+            <div className="relative min-h-[20rem] w-full grow flex items-center justify-center md:min-h-[30rem] p-8">
               <ArchitectureCard />
             </div>
           </div>
@@ -2080,8 +2169,8 @@ function MockTerminal() {
 function ArchitectureCard() {
   return (
     <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-      <div className="mb-4 text-sm text-slate-300">High‑level Architecture</div>
-      <div className="grid grid-cols-3 gap-3 text-xs">
+      <div className="mb-4 text-base text-slate-300">High‑level Architecture</div>
+      <div className="grid grid-flow-row-dense gap-3 text-xs lg:text-base">
         <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Connect</div>
         <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Orchestrate</div>
         <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Govern</div>
@@ -2091,29 +2180,10 @@ function ArchitectureCard() {
         <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Measure</div>
       </div>
       <div className="mt-4 rounded-md bg-gradient-to-r from-[#2DE0CB]/30 to-[#5B7CEF]/30 p-[1px]">
-        <div className="rounded-md bg-[#0C111B] p-3 text-center text-slate-400">
+        <div className="rounded-md bg-[#0C111B] p-3 text-xs lg:text-base text-center text-slate-400">
           Secure data plane · Tooling · Policies
         </div>
       </div>
     </div>
-  )
-}
-
-function Preflight() {
-  const tests = [
-    { name: "SparklesEffect is defined", pass: typeof SparklesEffect === "function" },
-    { name: "Magnetic wrapper does not animate", pass: true },
-    { name: "SolutionsOverview renders titles dot", pass: true },
-    { name: "Navbar smooth-scroll handler exists", pass: typeof window !== "undefined" },
-    { name: "Outcomes Bento grid renders", pass: true },
-  ]
-  return (
-    <ul className="sr-only" data-test="preflight">
-      {tests.map((t) => (
-        <li key={t.name}>
-          {t.pass ? "ok" : "fail"}: {t.name}
-        </li>
-      ))}
-    </ul>
   )
 }
