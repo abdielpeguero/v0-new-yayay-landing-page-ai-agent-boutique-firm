@@ -1285,7 +1285,7 @@ function LiveDemo({ t }: { t: typeof translations.en.demo }) {
               </p>
             </div>
             <div className="relative min-h-[20rem] w-full grow flex items-center justify-center md:min-h-[30rem] p-8">
-              <ArchitectureCard />
+              <ArchitectureCard variant="balanced" />
             </div>
           </div>
           <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-white/10 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]" />
@@ -2166,7 +2166,29 @@ function MockTerminal() {
   )
 }
 
-function ArchitectureCard() {
+function ArchitectureCard({ variant = 'default' }: { variant?: 'default' | 'balanced' }) {
+  if (variant === 'balanced') {
+    return (
+      <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+        <div className="mb-4 text-base text-slate-300">High‑level Architecture</div>
+        <div className="grid grid-cols-2 gap-3 text-xs lg:text-base">
+          <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Connect</div>
+          <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Orchestrate</div>
+          <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Govern</div>
+          <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Deploy</div>
+          <div className="col-span-2 rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">
+            Measure
+          </div>
+        </div>
+        <div className="mt-4 rounded-md bg-gradient-to-r from-[#2DE0CB]/30 to-[#5B7CEF]/30 p-[1px]">
+          <div className="rounded-md bg-[#0C111B] p-3 text-xs lg:text-base text-center text-slate-400">
+            Secure data plane · Tooling · Policies
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="rounded-xl border border-white/10 bg-white/5 p-4">
       <div className="mb-4 text-base text-slate-300">High‑level Architecture</div>
