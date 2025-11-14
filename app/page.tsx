@@ -220,6 +220,24 @@ const translations = {
       title: "Live Demo",
       subtitle: "See how YUYAY agents think, act, and learn—in real time.",
       playDemo: "Play demo",
+      features: {
+        realtime: {
+          title: "Real-time Conversations",
+          description: "Watch AI agents respond naturally, understand context, and provide accurate answers in milliseconds."
+        },
+        deployment: {
+          title: "Instant Deployment",
+          description: "Deploy agents across channels in minutes with our streamlined workflow."
+        },
+        security: {
+          title: "Enterprise Security",
+          description: "SOC 2 compliant with end-to-end encryption and role-based access controls."
+        },
+        architecture: {
+          title: "Modular Architecture",
+          description: "Flexible components that connect to your existing tools and scale with your needs."
+        }
+      }
     },
     aboutUs: {
       title: "About YUYAY",
@@ -280,9 +298,24 @@ const translations = {
       title: "Testimonials",
       subtitle: "Calm, credible proof—not hype.",
       items: [
-        { quote: "YUYAY delivered measurable ROI in weeks.", name: "VP Operations", org: "Series B SaaS" },
-        { quote: "Agents that actually understand our data.", name: "Head of CX", org: "Fintech" },
-        { quote: "From prototype to deployment—fast and safe.", name: "CTO", org: "Healthcare" },
+        { 
+          quote: "YUYAY delivered measurable ROI in weeks.", 
+          name: "Sarah Mitchell",
+          role: "CTO",
+          company: "TechCorp Global"
+        },
+        { 
+          quote: "Agents that actually understand our data.", 
+          name: "James Rodriguez",
+          role: "VP of Operations",
+          company: "Innovate Solutions"
+        },
+        { 
+          quote: "From prototype to deployment—fast and safe.", 
+          name: "Emily Chen",
+          role: "Head of Engineering",
+          company: "DataFlow Inc"
+        },
       ],
     },
     faq: {
@@ -420,6 +453,24 @@ const translations = {
       title: "Demo en Vivo",
       subtitle: "Ve cómo los agentes de YUYAY piensan, actúan y aprenden—en tiempo real.",
       playDemo: "Reproducir demo",
+      features: {
+        realtime: {
+          title: "Conversaciones en Tiempo Real",
+          description: "Observa cómo los agentes de IA responden naturalmente, comprenden el contexto y proporcionan respuestas precisas en milisegundos."
+        },
+        deployment: {
+          title: "Despliegue Instantáneo",
+          description: "Despliega agentes en todos los canales en minutos con nuestro flujo de trabajo simplificado."
+        },
+        security: {
+          title: "Seguridad Empresarial",
+          description: "Cumplimiento SOC 2 con cifrado de extremo a extremo y controles de acceso basados en roles."
+        },
+        architecture: {
+          title: "Arquitectura Modular",
+          description: "Componentes flexibles que se conectan a tus herramientas existentes y escalan según tus necesidades."
+        }
+      }
     },
     aboutUs: {
       title: "Acerca de YUYAY",
@@ -484,9 +535,24 @@ const translations = {
       title: "Testimonios",
       subtitle: "Prueba tranquila y creíble—sin exageraciones.",
       items: [
-        { quote: "YUYAY entregó ROI medible en semanas.", name: "VP de Operaciones", org: "SaaS Serie B" },
-        { quote: "Agentes que realmente entienden nuestros datos.", name: "Jefe de CX", org: "Fintech" },
-        { quote: "Del prototipo al despliegue—rápido y seguro.", name: "CTO", org: "Salud" },
+        { 
+          quote: "YUYAY entregó ROI medible en semanas.", 
+          name: "Sarah Mitchell",
+          role: "CTO",
+          company: "TechCorp Global"
+        },
+        { 
+          quote: "Agentes que realmente entienden nuestros datos.", 
+          name: "James Rodriguez",
+          role: "VP de Operaciones",
+          company: "Innovate Solutions"
+        },
+        { 
+          quote: "Del prototipo al despliegue—rápido y seguro.", 
+          name: "Emily Chen",
+          role: "Directora de Ingeniería",
+          company: "DataFlow Inc"
+        },
       ],
     },
     faq: {
@@ -1241,10 +1307,10 @@ function LiveDemo({ t }: { t: typeof translations.en.demo }) {
           <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
             <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
               <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">
-                Real-time Conversations
+                {t.features.realtime.title}
               </p>
               <p className="mt-2 max-w-lg text-sm/6 text-slate-400 max-lg:text-center">
-                Watch AI agents respond naturally, understand context, and provide accurate answers in milliseconds.
+                {t.features.realtime.description}
               </p>
             </div>
             <div className="relative min-h-[30rem] w-full grow max-lg:mx-auto max-lg:max-w-sm border-0">
@@ -1262,10 +1328,10 @@ function LiveDemo({ t }: { t: typeof translations.en.demo }) {
           <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
             <div className="px-8 pt-8 sm:px-10 sm:pt-10">
               <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">
-                Instant Deployment
+                {t.features.deployment.title}
               </p>
               <p className="mt-2 max-w-lg text-sm/6 text-slate-400 max-lg:text-center">
-                Deploy agents across channels in minutes with our streamlined workflow.
+                {t.features.deployment.description}
               </p>
             </div>
             <div className="flex flex-1 items-center justify-center px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2">
@@ -1283,10 +1349,10 @@ function LiveDemo({ t }: { t: typeof translations.en.demo }) {
           <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
             <div className="px-8 pt-8 sm:px-10 sm:pt-10">
               <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">
-                Enterprise Security
+                {t.features.security.title}
               </p>
               <p className="mt-2 max-w-lg text-sm/6 text-slate-400 max-lg:text-center">
-                SOC 2 compliant with end-to-end encryption and role-based access controls.
+                {t.features.security.description}
               </p>
             </div>
             <div className="flex flex-1 items-center justify-center max-lg:py-6 lg:pb-2">
@@ -1315,10 +1381,10 @@ function LiveDemo({ t }: { t: typeof translations.en.demo }) {
           <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
             <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
               <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">
-                Modular Architecture
+                {t.features.architecture.title}
               </p>
               <p className="mt-2 max-w-lg text-sm/6 text-slate-400 max-lg:text-center">
-                Flexible components that connect to your existing tools and scale with your needs.
+                {t.features.architecture.description}
               </p>
             </div>
             <div className="relative min-h-[20rem] w-full grow flex items-center justify-center md:min-h-[30rem] p-8">
@@ -1794,25 +1860,25 @@ function CaseStudies({ t }: { t: typeof translations.en.outcomes }) {
 function Testimonials({ t }: { t: typeof translations.en.testimonials }) {
   const testimonials = [
     {
-      name: "Sarah Mitchell",
-      role: "CTO",
-      company: "TechCorp Global",
+      name: t.items[0].name,
+      role: t.items[0].role,
+      company: t.items[0].company,
       avatar: "/professional-woman-executive.png",
       rating: 5,
       content: t.items[0].quote,
     },
     {
-      name: "James Rodriguez",
-      role: "VP of Operations",
-      company: "Innovate Solutions",
+      name: t.items[1].name,
+      role: t.items[1].role,
+      company: t.items[1].company,
       avatar: "/professional-executive-man.png",
       rating: 5,
       content: t.items[1].quote,
     },
     {
-      name: "Emily Chen",
-      role: "Head of Engineering",
-      company: "DataFlow Inc",
+      name: t.items[2].name,
+      role: t.items[2].role,
+      company: t.items[2].company,
       avatar: "/professional-asian-woman.png",
       rating: 4,
       content: t.items[2].quote,
