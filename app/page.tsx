@@ -964,10 +964,10 @@ function Hero({ t }: { t: typeof translations.en.hero }) {
             <SparklesIcon className="h-3.5 w-3.5 text-[#2DE0CB]" />
             <span>{t.badge}</span>
           </div>
-          <h1 className="mx-auto max-w-3xl tracking-[-0.03em] font-normal text-4xl md:text-6xl bg-gradient-to-r from-[#2DE0CB] to-[#5B7CEF] bg-clip-text text-white">
+          <h1 className="mx-auto max-w-3xl tracking-[-0.03em] font-medium text-4xl md:text-6xl bg-gradient-to-r from-[#2DE0CB] to-[#5B7CEF] bg-clip-text text-white">
             {t.title}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg font-normal text-slate-400">{t.description}</p>
+          <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg font-regular text-slate-400">{t.description}</p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Magnetic>
               <Button className="bg-gradient-to-r from-[#2DE0CB] to-[#5B7CEF] text-[#0A0E14] hover:bg-teal-500 bg-teal-400 cursor-pointer">
@@ -1142,7 +1142,7 @@ function SolutionsOverview({ t }: { t: typeof translations.en.solutions }) {
     <motion.div {...fadeUp(0)} className="mx-auto max-w-[1200px] px-6 md:px-8">
       <div className="mb-10 text-center">
         <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">{t.title}</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-3xl">
+        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-medium tracking-tight text-balance text-white sm:text-3xl">
           {t.subtitle}
         </p>
       </div>
@@ -1193,7 +1193,7 @@ function LiveDemo({ t }: { t: typeof translations.en.demo }) {
   return (
     <motion.div {...fadeUp(0)} className="mx-auto max-w-[1200px] px-6 lg:px-8">
       <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">Intelligent Automation</h2>
-      <p className="mx-auto mt-2 max-w-lg text-center text-3xl font-semibold tracking-tight text-balance text-white">
+      <p className="mx-auto mt-2 max-w-lg text-center text-3xl font-medium tracking-tight text-balance text-white">
         {t.subtitle}
       </p>
 
@@ -1495,7 +1495,7 @@ function AboutUs({ t }: { t: typeof translations.en.aboutUs }) {
       {/* Header */}
       <div className="mb-12 text-center max-w-3xl mx-auto">
         <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">{t.title}</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-3xl font-semibold tracking-tight text-balance text-white">
+        <p className="mx-auto mt-2 max-w-lg text-center text-3xl font-medium tracking-tight text-balance text-white">
           {t.subtitle}
         </p>
       </div>
@@ -1566,7 +1566,7 @@ function Integrations({ t }: { t: typeof translations.en.integrations }) {
     <motion.div {...fadeUp(0)} className="mx-auto max-w-[1200px] px-6 md:px-8">
       <div className="mb-10 text-center">
         <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">{t.title}</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-3xl">
+        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-medium tracking-tight text-balance text-white sm:text-3xl">
           {t.subtitle}
         </p>
       </div>
@@ -1613,7 +1613,7 @@ function SecurityCompliance({ t }: { t: typeof translations.en.security }) {
     <motion.div {...fadeUp(0)} className="mx-auto max-w-[1200px] px-6 md:px-8">
       <div className="mb-12 text-center max-w-3xl mx-auto">
         <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">{t.title}</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-3xl">
+        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-medium tracking-tight text-balance text-white sm:text-3xl">
           {t.subtitle}
         </p>
       </div>
@@ -1711,7 +1711,7 @@ function CaseStudies({ t }: { t: typeof translations.en.outcomes }) {
     <motion.div {...fadeUp(0)} className="mx-auto max-w-[1200px] px-6 md:px-8">
       <div className="mb-8 text-center">
         <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">{t.title}</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-3xl">
+        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-medium tracking-tight text-balance text-white sm:text-3xl">
           {t.subtitle}
         </p>
       </div>
@@ -1786,7 +1786,7 @@ function Testimonials({ t }: { t: typeof translations.en.testimonials }) {
     <div className="mx-auto max-w-[1200px] px-6 md:px-8">
       <motion.div {...fadeUp(0)} className="mb-12 text-center">
         <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">{t.title}</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-3xl">
+        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-medium tracking-tight text-balance text-white sm:text-3xl">
           {t.subtitle}
         </p>
       </motion.div>
@@ -1847,7 +1847,7 @@ function FAQ({ t }: { t: typeof translations.en.faq }) {
     <motion.div {...fadeUp(0)} className="mx-auto max-w-[1200px] px-6 md:px-8">
       <div className="mb-16 text-center">
         <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">{t.title}</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white">
+        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-medium tracking-tight text-balance text-white">
           Everything you need to know about YUYAY AI Agents
         </p>
       </div>
