@@ -2126,11 +2126,9 @@ function ListItem({ children }: React.PropsWithChildren) {
 
 function MockTerminal() {
   const fullText = 
-  `$ yuyay agents upgrade --env=prod > Checking versioning, pulling latest models and policy updates...
+  `$ yuyay agents upgrade --env=prod > Checking versioning, pulling latest...
 
-    > Integrations connected: CRM, Billing API, Knowledge Hub, Observability...
-
-    > Governance suite enabled: RBAC..........`
+    > Integrations connected: CRM, Billing API, Knowledge Hub, Observability...`
 
   const [displayedText, setDisplayedText] = React.useState("")
   const [currentIndex, setCurrentIndex] = React.useState(0)
@@ -2179,7 +2177,7 @@ function ArchitectureCard({ variant = 'default' }: { variant?: 'default' | 'bala
           <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Orchestrate</div>
           <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Govern</div>
           <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Deploy</div>
-          <div className="col-span md:col-span-2 rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">
+          <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">
             Measure
           </div>
         </div>
