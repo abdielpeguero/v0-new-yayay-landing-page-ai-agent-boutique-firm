@@ -1578,7 +1578,7 @@ function Integrations({ t }: { t: typeof translations.en.integrations }) {
               className={`absolute inset-0 bg-gradient-to-br ${cat.color} rounded-2xl opacity-50 group-hover:opacity-70 transition-opacity blur-xl`}
             />
             <div className="relative rounded-2xl border border-white/10 bg-[#0A0E14]/90 backdrop-blur-sm p-6">
-              <h3 className="mb-4 text-sm font-semibold text-slate-200 flex items-center gap-2">
+              <h3 className="mb-4 font-semibold text-slate-200 flex items-center gap-2 text-base">
                 <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-[#2DE0CB] to-[#5B7CEF]" />
                 {cat.name}
               </h3>
