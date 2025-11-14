@@ -2171,12 +2171,12 @@ function ArchitectureCard({ variant = 'default' }: { variant?: 'default' | 'bala
     return (
       <div className="rounded-xl border border-white/10 bg-white/5 p-4">
         <div className="mb-4 text-base text-slate-300">High‑level Architecture</div>
-        <div className="grid grid-cols-2 gap-3 text-xs lg:text-base">
+        <div className="grid grid-col gap-3 text-xs lg:text-base">
           <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Connect</div>
           <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Orchestrate</div>
           <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Govern</div>
           <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Deploy</div>
-          <div className="col-span-2 rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">
+          <div className="col-span md:col-span-2 rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">
             Measure
           </div>
         </div>
@@ -2192,12 +2192,12 @@ function ArchitectureCard({ variant = 'default' }: { variant?: 'default' | 'bala
   return (
     <div className="rounded-xl border border-white/10 bg-white/5 p-4">
       <div className="mb-4 text-base text-slate-300">High‑level Architecture</div>
-      <div className="grid mid:grid-cols-2 lg:grid-cols-3 gap-3 text-xs lg:text-base">
+      <div className="grid grid-cols md:grid-cols-3 lg:grid-cols-3 gap-3 text-xs lg:text-base">
         <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Connect</div>
         <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Orchestrate</div>
         <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Govern</div>
-        <div className="col-span-2 rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Deploy</div>
-        <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Measure</div>
+        <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Deploy</div>
+        <div className="col-span md:col-span-2 rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Measure</div>
       </div>
       <div className="mt-4 rounded-md bg-gradient-to-r from-[#2DE0CB]/30 to-[#5B7CEF]/30 p-[1px]">
         <div className="rounded-md bg-[#0C111B] p-3 text-xs lg:text-base text-center text-slate-400">
