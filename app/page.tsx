@@ -24,7 +24,7 @@ import {
   X,
   ChevronUp,
 } from "lucide-react"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { AnimatePresence } from "framer-motion" // Imported for mobile menu animations
 
 // Motion helpers
@@ -378,6 +378,51 @@ const translations = {
       title: "Integrations",
       subtitle: "Connect to the tools your teams already trust.",
     },
+    useCases: {
+      title: "Use Cases",
+      subtitle: "Solutions that Yuyay can develop for you.",
+      cases: [
+        {
+          title: "Automated Regulatory Compliance System",
+          points: [
+            "Identifies incomplete or non-compliant clauses.",
+            "Summarizes, classifies documents by risk, and generates alerts.",
+          ],
+        },
+        {
+          title: "Dynamic Credit Risk Predictive Model",
+          points: ["Predicts defaults using ML models.", "Integrates with unstructured data (comments, complaints)."],
+        },
+        {
+          title: "Financial Conversational Assistant",
+          points: [
+            "Integrates real customer data (balance, transactions, loans).",
+            "Answers frequent questions and provides digital assistance.",
+          ],
+        },
+        {
+          title: "Operational Intelligence Assistant (Processes)",
+          points: [
+            "Based on observation of real work patterns.",
+            "Integrates adaptive RPA with AI and generates improvement suggestions.",
+          ],
+        },
+        {
+          title: "Internal Financial Assistant for Analysts (Copilot)",
+          points: [
+            "Integrated with spreadsheets, ERP, and databases.",
+            "Converses in natural language and facilitates reading for internal productivity.",
+          ],
+        },
+        {
+          title: "Intelligent IVR System with Voice Agent",
+          points: [
+            "Understands natural language, avoiding button presses for redirection.",
+            "Integrates authentication and automatic interaction logging.",
+          ],
+        },
+      ],
+    },
     security: {
       title: "Security & Compliance",
       subtitle: "Secure by design. Privacy-first deployment options.",
@@ -701,6 +746,54 @@ const translations = {
       title: "Integraciones",
       subtitle: "Conéctate a las herramientas en las que tus equipos ya confían.",
     },
+    useCases: {
+      title: "Casos de Uso",
+      subtitle: "Soluciones que Yuyay puede desarrollar para ti.",
+      cases: [
+        {
+          title: "Sistema de Cumplimiento Normativo Automatizado",
+          points: [
+            "Identifica cláusulas incompletas o fuera de norma.",
+            "Resume, clasifica documentos según su riesgo y genera alertas.",
+          ],
+        },
+        {
+          title: "Modelo Predictivo de Riesgo Crediticio Dinámico",
+          points: [
+            "Predicción de impagos con modelos ML.",
+            "Integración con datos no estructurados (comentarios, reclamos).",
+          ],
+        },
+        {
+          title: "Asistente Conversacional Financiero",
+          points: [
+            "Integra datos reales del cliente (saldo, movimientos, préstamos).",
+            "Responde a preguntas frecuentes y asistencia digital.",
+          ],
+        },
+        {
+          title: "Asistente de Inteligencia Operativa (Procesos)",
+          points: [
+            "Basado en observación de patrones de trabajo reales.",
+            "Integra RPA con IA adaptativa y genera sugerencias de mejora.",
+          ],
+        },
+        {
+          title: "Asistente Financiero Interno para Analistas (Copiloto)",
+          points: [
+            "Integrado a hojas de cálculo, ERP y bases de datos.",
+            "Conversa en lenguaje natural y facilita lectura para productividad interna.",
+          ],
+        },
+        {
+          title: "Sistema IVR Inteligente con Agente de Voz",
+          points: [
+            "Entiende lenguaje natural evitando presionar botones para redirigir.",
+            "Integra autenticación y registro automático de interacciones.",
+          ],
+        },
+      ],
+    },
     security: {
       title: "Seguridad y Cumplimiento",
       subtitle: "Seguro por diseño. Opciones de implementación que priorizan la privacidad.",
@@ -980,6 +1073,11 @@ export default function Page() {
         <Section id="integrations">
           <Integrations t={t.integrations} />
         </Section>
+
+        <Section id="use-cases">
+          <UseCases t={t.useCases} />
+        </Section>
+
         <Section id="security" background="particles-blue">
           <SecurityCompliance t={t.security} />
         </Section>
@@ -1020,6 +1118,7 @@ export default function Page() {
           box-shadow: none !important;
         }
       `}</style>
+      <ScrollToTop />
     </main>
   )
 }
@@ -1088,7 +1187,7 @@ function Navbar({
     >
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 md:px-8">
         <a href="#" className="flex items-center gap-2 py-4">
-          <img src="/yuya-logo-white.svg" alt="YUYAY" className="h-6 w-auto" />
+          <img src="/yuya-logo-white.svg" alt="YUYAY" className="h-8 w-auto" />
         </a>
 
         <nav className="hidden items-center gap-6 text-sm text-slate-300 md:flex">
@@ -1655,7 +1754,7 @@ function AnimatedChatDemo() {
               <div className="absolute right-0 top-[180px] w-[3px] h-[70px] bg-slate-700 rounded-l-sm translate-x-[3px]" />
 
               {/* iPhone body */}
-              <div className="shadow-2xl overflow-hidden relative bg-slate-800 border-slate-400 border-4 rounded-3xl">
+              <div className="shadow-2xl overflow-hidden relative bg-slate-800 rounded-3xl border-slate-600 border-0">
                 {/* Dynamic Island */}
                 <div className="absolute top-[8px] left-1/2 -translate-x-1/2 z-10">
                   <div className="w-[120px] h-[35px] bg-black rounded-[20px] flex items-center justify-center gap-2">
@@ -1897,7 +1996,7 @@ function Leadership({ t }: { t: typeof translations.en.leadership }) {
             <div className="absolute inset-0 bg-gradient-to-br from-[#2DE0CB]/20 to-[#5B7CEF]/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl" />
 
             {/* Card */}
-            <div className="relative h-full rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm overflow-hidden group-hover:border-[#2DE0CB]/50 transition-all duration-300">
+            <div className="relative h-full rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm overflow-hidden group-hover:border-[#5B7CEF]/50 transition-all duration-300">
               {/* Image Container */}
               <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-slate-800/50 to-slate-900/50">
                 <img
@@ -1976,6 +2075,115 @@ function Integrations({ t }: { t: typeof translations.en.integrations }) {
           + 50 more integrations including ERPs, Analytics, Messaging, and Custom APIs
         </p>
       </motion.div>
+    </motion.div>
+  )
+}
+
+function UseCases({ t }: { t: typeof translations.en.useCases }) {
+  const useCaseIcons = [
+    // Icon 1: Compliance/Document (Gear + Chart)
+    <svg key="compliance" className="h-12 w-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path
+        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M9 8h2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>,
+    // Icon 2: Predictive/Analytics (Chart trending up)
+    <svg key="predictive" className="h-12 w-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>,
+    // Icon 3: Conversational (Chat bubbles)
+    <svg
+      key="conversational"
+      className="h-12 w-12"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+    >
+      <path
+        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>,
+    // Icon 4: Operational Intelligence (Atom/Network)
+    <svg
+      key="operational"
+      className="h-12 w-12"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+    >
+      <path
+        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>,
+    // Icon 5: Copilot/Assistant (Window/Code)
+    <svg key="copilot" className="h-12 w-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>,
+    // Icon 6: Voice/IVR (Microphone/Voice)
+    <svg key="voice" className="h-12 w-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path
+        d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>,
+  ]
+
+  // Split cases into 3 columns for masonry layout
+  const chunkArray = <T,>(array: T[], chunkSize: number): T[][] => {
+    const result: T[][] = []
+    for (let i = 0; i < array.length; i += chunkSize) {
+      result.push(array.slice(i, i + chunkSize))
+    }
+    return result
+  }
+
+  const useCaseChunks = chunkArray(t.cases, Math.ceil(t.cases.length / 3))
+
+  return (
+    <motion.div {...fadeUp(0)} className="mx-auto max-w-[1200px] px-6 md:px-8">
+      <div className="mb-12 text-center">
+        <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">{t.title}</h2>
+        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-medium tracking-tight text-balance text-white sm:text-3xl">
+          {t.subtitle}
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {useCaseChunks.map((chunk, chunkIndex) => (
+          <div key={chunkIndex} className="space-y-4">
+            {chunk.map((useCase, index) => {
+              const globalIndex = chunkIndex * Math.ceil(t.cases.length / 3) + index
+              return (
+                <motion.div key={index} {...fadeUp(globalIndex * 0.05)} className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#2DE0CB]/10 to-[#5B7CEF]/10 rounded-2xl opacity-50 group-hover:opacity-70 transition-opacity blur-xl" />
+                  <div className="relative rounded-2xl border border-white/10 bg-[#0A0E14]/90 backdrop-blur-sm p-6 hover:border-[#2DE0CB]/50 transition-colors min-h-[280px] flex flex-col">
+                    <div className="mb-4 text-[#2DE0CB]">{useCaseIcons[globalIndex]}</div>
+                    <h3 className="mb-3 text-lg font-semibold text-slate-100">{useCase.title}</h3>
+                    <ul className="space-y-2 flex-1">
+                      {useCase.points.map((point, pointIndex) => (
+                        <li key={pointIndex} className="flex items-start gap-2 text-sm text-slate-300">
+                          <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#2DE0CB]" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              )
+            })}
+          </div>
+        ))}
+      </div>
     </motion.div>
   )
 }
@@ -2631,7 +2839,7 @@ function Services({ t }: { t: typeof translations.en.services }) {
     analytics: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="12" cy="12" r="3" />
-        <path d="M12 3v2m0 14v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M3 12h2m14 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" />
+        <path d="M12 3v2m0 14v2M4.9 4.93l1.41 1.41M11.32 11.32l1.41 1.41M3 12h2m14 0h2M4.93 19.07l1.41-1.41M11.32 11.32l1.41-1.41" />
       </svg>
     ),
     platform: (
@@ -2669,7 +2877,7 @@ function Services({ t }: { t: typeof translations.en.services }) {
             whileHover={{ scale: 1.02, y: -4 }}
             className="group relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#2DE0CB]/10 via-transparent to-[#5B7CEF]/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#2DE0CB]/10 to-[#5B7CEF]/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
             <Card className="h-full border border-white/10 bg-white/5 backdrop-blur-sm hover:border-[#5B7CEF]/50 transition-all duration-300">
               <CardHeader className="pb-3">
@@ -2703,31 +2911,41 @@ function Services({ t }: { t: typeof translations.en.services }) {
 }
 
 function ScrollToTop() {
+  const [isVisible, setIsVisible] = useState(false)
   const prefersReducedMotion = useReducedMotion()
-  const [showScrollTop, setShowScrollTop] = React.useState(false)
 
-  React.useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300) // Show after scrolling 300px
+  useEffect(() => {
+    const toggleVisibility = () => {
+      const heroSection = document.getElementById("hero")
+      if (heroSection) {
+        const heroBottom = heroSection.getBoundingClientRect().bottom
+        setIsVisible(heroBottom < 0)
+      }
     }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+
+    window.addEventListener("scroll", toggleVisibility)
+    toggleVisibility()
+
+    return () => window.removeEventListener("scroll", toggleVisibility)
   }, [])
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" })
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+    })
   }
 
   return (
     <AnimatePresence>
-      {showScrollTop && (
+      {isVisible && (
         <motion.button
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.2 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-[#0A0E14]/80 transition delay-10 duration-300 ease-in-out hover:bg-[#192333]/80 backdrop-blur text-slate-300 hover:text-white hover:bg-[#0A0E14]/90 transition-colors"
+          className="fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#0A0E14]/80 backdrop-blur border border-white/10 text-cyan-400 shadow-lg transition-all hover:bg-[#0A0E14]/90 hover:scale-110 hover:shadow-cyan-500/20"
           aria-label="Scroll to top"
         >
           <ChevronUp className="h-5 w-5" />
