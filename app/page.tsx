@@ -7,7 +7,23 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
-import { Check, Lock, Shield, SparklesIcon, ArrowRight, LucideArrowUpRight as LucideArrowUpRightIcon, TrendingUp, Gauge, Rocket, Target, Zap, Languages, Menu, X, ChevronUp } from 'lucide-react'
+import {
+  Check,
+  Lock,
+  Shield,
+  SparklesIcon,
+  ArrowRight,
+  LucideArrowUpRight as LucideArrowUpRightIcon,
+  TrendingUp,
+  Gauge,
+  Rocket,
+  Target,
+  Zap,
+  Languages,
+  Menu,
+  X,
+  ChevronUp,
+} from "lucide-react"
 import React from "react"
 import { AnimatePresence } from "framer-motion" // Imported for mobile menu animations
 
@@ -223,28 +239,29 @@ const translations = {
       features: {
         realtime: {
           title: "Real-time Conversations",
-          description: "Watch AI agents respond naturally, understand context, and provide accurate answers in milliseconds."
+          description:
+            "Watch AI agents respond naturally, understand context, and provide accurate answers in milliseconds.",
         },
         deployment: {
           title: "Instant Deployment",
-          description: "Deploy agents across channels in minutes with our streamlined workflow."
+          description: "Deploy agents across channels in minutes with our streamlined workflow.",
         },
         security: {
           title: "Enterprise Security",
-          description: "SOC 2 compliant with end-to-end encryption and role-based access controls."
+          description: "SOC 2 compliant with end-to-end encryption and role-based access controls.",
         },
         architecture: {
           title: "Modular Architecture",
-          description: "Flexible components that connect to your existing tools and scale with your needs."
-        }
-      }
+          description: "Flexible components that connect to your existing tools and scale with your needs.",
+        },
+      },
     },
     aboutUs: {
       title: "About YUYAY",
       subtitle: "Your trusted partner in AI transformation",
       mission: {
         title: "Our Mission",
-        desc: "We believe AI should augment human potential, not replace it. YUYAY was founded to bridge the gap between cutting-edge AI capabilities and real-world business needs—delivering intelligent systems that teams actually trust and use.",
+        desc: "Yuyay is a company specialized in the development of intelligent agents and artificial intelligence (AI) solutions adapted to the needs of each industry. His approach combines strategic consulting, data engineering and digital experience design to drive the technological transformation of organizations.",
       },
       approach: {
         title: "Our Approach",
@@ -264,8 +281,24 @@ const translations = {
           desc: "We track real outcomes, not vanity metrics.",
         },
         {
-          title: "Fast Iteration",
-          desc: "From pilot to production in weeks, not months.",
+          title: "Expert Team",
+          desc: "Industry veterans from top tech companies.",
+        },
+      ],
+    },
+    leadership: {
+      title: "Leadership",
+      subtitle: "Meet the visionaries behind YUYAY",
+      members: [
+        {
+          name: "Alejandro Ramirez",
+          role: "Chief Executive Officer",
+          description: "Visionary leader with 15+ years driving AI innovation and digital transformation.",
+        },
+        {
+          name: "Miklos Lukacs",
+          role: "Chief Technology Officer",
+          description: "Expert technologist specializing in enterprise AI solutions and scalable architectures.",
         },
       ],
     },
@@ -298,23 +331,23 @@ const translations = {
       title: "Testimonials",
       subtitle: "Calm, credible proof—not hype.",
       items: [
-        { 
-          quote: "YUYAY delivered measurable ROI in weeks.", 
+        {
+          quote: "YUYAY delivered measurable ROI in weeks.",
           name: "Sarah Mitchell",
           role: "CTO",
-          company: "TechCorp Global"
+          company: "TechCorp Global",
         },
-        { 
-          quote: "Agents that actually understand our data.", 
+        {
+          quote: "Agents that actually understand our data.",
           name: "James Rodriguez",
           role: "VP of Operations",
-          company: "Innovate Solutions"
+          company: "Innovate Solutions",
         },
-        { 
-          quote: "From prototype to deployment—fast and safe.", 
+        {
+          quote: "From prototype to deployment—fast and safe.",
           name: "Emily Chen",
           role: "Head of Engineering",
-          company: "DataFlow Inc"
+          company: "DataFlow Inc",
         },
       ],
     },
@@ -456,28 +489,30 @@ const translations = {
       features: {
         realtime: {
           title: "Conversaciones en Tiempo Real",
-          description: "Observa cómo los agentes de IA responden naturalmente, comprenden el contexto y proporcionan respuestas precisas en milisegundos."
+          description:
+            "Observa cómo los agentes de IA responden naturalmente, comprenden el contexto y proporcionan respuestas precisas en milisegundos.",
         },
         deployment: {
           title: "Despliegue Instantáneo",
-          description: "Despliega agentes en todos los canales en minutos con nuestro flujo de trabajo simplificado."
+          description: "Despliega agentes en todos los canales en minutos con nuestro flujo de trabajo simplificado.",
         },
         security: {
           title: "Seguridad Empresarial",
-          description: "Cumplimiento SOC 2 con cifrado de extremo a extremo y controles de acceso basados en roles."
+          description: "Cumplimiento SOC 2 con cifrado de extremo a extremo y controles de acceso basados en roles.",
         },
         architecture: {
           title: "Arquitectura Modular",
-          description: "Componentes flexibles que se conectan a tus herramientas existentes y escalan según tus necesidades."
-        }
-      }
+          description:
+            "Componentes flexibles que se conectan a tus herramientas existentes y escalan según tus necesidades.",
+        },
+      },
     },
     aboutUs: {
       title: "Acerca de YUYAY",
       subtitle: "Tu socio de confianza en transformación de IA",
       mission: {
         title: "Nuestra Misión",
-        desc: "Creemos que la IA debe aumentar el potencial humano, no reemplazarlo. YUYAY fue fundada para cerrar la brecha entre las capacidades de IA de vanguardia y las necesidades comerciales del mundo real, entregando sistemas inteligentes en los que los equipos realmente confían y usan.",
+        desc: "Yuyay es una empresa especializada en el desarrollo de agentes inteligentes y soluciones de inteligencia artificial (IA) adaptadas a las necesidades de cada industria. Su enfoque combina la consultoría estratégica, la ingeniería de datos y el diseño de experiencias digitales para impulsar la transformación tecnológica de las organizaciones.",
       },
       approach: {
         title: "Nuestro Enfoque",
@@ -497,8 +532,24 @@ const translations = {
           desc: "Rastreamos resultados reales, no métricas de vanidad.",
         },
         {
-          title: "Iteración Rápida",
-          desc: "Del piloto a producción en semanas, no meses.",
+          title: "Equipo Experto",
+          desc: "Veteranos de la industria de las principales empresas tecnológicas.",
+        },
+      ],
+    },
+    leadership: {
+      title: "Liderazgo",
+      subtitle: "Conoce a los visionarios detrás de YUYAY",
+      members: [
+        {
+          name: "Alejandro Ramirez",
+          role: "Director Ejecutivo",
+          description: "Líder visionario con más de 15 años impulsando la innovación en IA y transformación digital.",
+        },
+        {
+          name: "Miklos Lukacs",
+          role: "Director de Tecnología",
+          description: "Tecnólogo experto especializado en soluciones de IA empresarial y arquitecturas escalables.",
         },
       ],
     },
@@ -535,23 +586,23 @@ const translations = {
       title: "Testimonios",
       subtitle: "Prueba tranquila y creíble—sin exageraciones.",
       items: [
-        { 
-          quote: "YUYAY entregó ROI medible en semanas.", 
+        {
+          quote: "YUYAY entregó ROI medible en semanas.",
           name: "Sarah Mitchell",
           role: "CTO",
-          company: "TechCorp Global"
+          company: "TechCorp Global",
         },
-        { 
-          quote: "Agentes que realmente entienden nuestros datos.", 
+        {
+          quote: "Agentes que realmente entienden nuestros datos.",
           name: "James Rodriguez",
           role: "VP de Operaciones",
-          company: "Innovate Solutions"
+          company: "Innovate Solutions",
         },
-        { 
-          quote: "Del prototipo al despliegue—rápido y seguro.", 
+        {
+          quote: "Del prototipo al despliegue—rápido y seguro.",
           name: "Emily Chen",
           role: "Directora de Ingeniería",
-          company: "DataFlow Inc"
+          company: "DataFlow Inc",
         },
       ],
     },
@@ -740,7 +791,7 @@ export default function Page() {
       </div>
 
       <Navbar onNav={handleNav} language={language} setLanguage={setLanguage} t={t.nav} activeSection={activeSection} />
-      
+
       <AnimatePresence>
         {showScrollTop && (
           <motion.button
@@ -774,6 +825,11 @@ export default function Page() {
           {/* Changed id from "how" to "about" */}
           <AboutUs t={t.aboutUs} /> {/* Changed from HowItWorks to AboutUs */}
         </Section>
+
+        <Section>
+          <Leadership t={t.leadership} />
+        </Section>
+
         <Section id="integrations">
           <Integrations t={t.integrations} />
         </Section>
@@ -887,7 +943,7 @@ function Navbar({
         <a href="#" className="flex items-center gap-2 py-4">
           <img src="/yuya-logo-white.svg" alt="YUYAY" className="h-6 w-auto" />
         </a>
-        
+
         <nav className="hidden items-center gap-6 text-sm text-slate-300 md:flex">
           {navItems.map((item) => (
             <a
@@ -912,7 +968,7 @@ function Navbar({
             </a>
           ))}
         </nav>
-        
+
         <div className="hidden md:flex py-3 items-center gap-4">
           <Button
             variant="outline"
@@ -941,18 +997,14 @@ function Navbar({
           >
             <a href="#contact">{t.bookDemo}</a>
           </Button>
-          
+
           <Button
             variant="ghost"
             size="sm"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="text-slate-300 hover:text-slate-100 hover:bg-white/5 px-2"
           >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
       </div>
@@ -985,7 +1037,7 @@ function Navbar({
                   {item.label}
                 </a>
               ))}
-              
+
               <div className="mt-2 pt-2 border-t border-white/10">
                 <Button
                   variant="outline"
@@ -1657,6 +1709,75 @@ function AboutUs({ t }: { t: typeof translations.en.aboutUs }) {
   )
 }
 
+function Leadership({ t }: { t: typeof translations.en.leadership }) {
+  const members = [
+    {
+      name: t.members[0].name,
+      role: t.members[0].role,
+      description: t.members[0].description,
+      image: "/images/alejandro-ramirez.png",
+    },
+    {
+      name: t.members[1].name,
+      role: t.members[1].role,
+      description: t.members[1].description,
+      image: "/images/mikloslukacs1.png",
+    },
+  ]
+
+  return (
+    <motion.div {...fadeUp(0)} className="mx-auto max-w-[1200px] px-6 md:px-8">
+      {/* Header */}
+      <div className="mb-12 text-center max-w-3xl mx-auto">
+        <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB] text-teal-400">{t.title}</h2>
+        <p className="mx-auto mt-2 max-w-lg text-center text-3xl font-medium tracking-tight text-balance text-white">
+          {t.subtitle}
+        </p>
+      </div>
+
+      {/* Team Members Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        {members.map((member, i) => (
+          <motion.div
+            key={member.name}
+            {...fadeUp(0.1 + i * 0.1)}
+            whileHover={{ y: -8 }}
+            transition={{ duration: 0.3 }}
+            className="group relative"
+          >
+            {/* Glow effect on hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#2DE0CB]/20 to-[#5B7CEF]/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl" />
+
+            {/* Card */}
+            <div className="relative h-full rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm overflow-hidden group-hover:border-[#2DE0CB]/50 transition-all duration-300">
+              {/* Image Container */}
+              <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-slate-800/50 to-slate-900/50">
+                <img
+                  src={member.image || "/placeholder.svg"}
+                  alt={member.name}
+                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E14] via-transparent to-transparent opacity-60" />
+              </div>
+
+              {/* Content */}
+              <div className="p-6 lg:p-8">
+                <h3 className="text-2xl font-semibold text-slate-100 mb-2">{member.name}</h3>
+                <p className="text-base font-medium text-[#2DE0CB] mb-4">{member.role}</p>
+                <p className="text-sm text-slate-400 leading-relaxed">{member.description}</p>
+              </div>
+
+              {/* Bottom accent line */}
+              <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#2DE0CB] via-[#5B7CEF] to-[#2DE0CB] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </motion.div>
+  )
+}
+
 function Integrations({ t }: { t: typeof translations.en.integrations }) {
   const categories = [
     { name: "CRMs", items: ["Salesforce", "HubSpot", "Pipedrive"], color: "from-[#2DE0CB]/20 to-[#2DE0CB]/5" },
@@ -2228,8 +2349,7 @@ function ListItem({ children }: React.PropsWithChildren) {
 }
 
 function MockTerminal() {
-  const fullText = 
-  `$ yuyay agents upgrade --env=prod > Checking versioning, pulling latest...
+  const fullText = `$ yuyay agents upgrade --env=prod > Checking versioning, pulling latest...
 
     > Integrations connected: CRM, Billing API, Knowledge Hub, Observability...`
 
@@ -2270,19 +2390,19 @@ function MockTerminal() {
   )
 }
 
-function ArchitectureCard({ variant = 'default' }: { variant?: 'default' | 'balanced' }) {
-  if (variant === 'balanced') {
+function ArchitectureCard({ variant = "default" }: { variant?: "default" | "balanced" }) {
+  if (variant === "balanced") {
     return (
       <div className="rounded-xl border border-white/10 bg-white/5 p-4">
         <div className="mb-4 text-base text-slate-300">High‑level Architecture</div>
         <div className="grid grid-col gap-3 text-xs lg:text-base">
           <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Connect</div>
-          <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Orchestrate</div>
+          <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">
+            Orchestrate
+          </div>
           <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Govern</div>
           <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Deploy</div>
-          <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">
-            Measure
-          </div>
+          <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Measure</div>
         </div>
         <div className="mt-4 rounded-md bg-gradient-to-r from-[#2DE0CB]/30 to-[#5B7CEF]/30 p-[1px]">
           <div className="rounded-md bg-[#0C111B] p-3 text-xs lg:text-base text-center text-slate-400">
@@ -2301,7 +2421,9 @@ function ArchitectureCard({ variant = 'default' }: { variant?: 'default' | 'bala
         <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Orchestrate</div>
         <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Govern</div>
         <div className="rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Deploy</div>
-        <div className="col-span md:col-span-2 rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">Measure</div>
+        <div className="col-span md:col-span-2 rounded-lg border border-white/10 bg-[#0C111B] p-3 text-center text-slate-300">
+          Measure
+        </div>
       </div>
       <div className="mt-4 rounded-md bg-gradient-to-r from-[#2DE0CB]/30 to-[#5B7CEF]/30 p-[1px]">
         <div className="rounded-md bg-[#0C111B] p-3 text-xs lg:text-base text-center text-slate-400">
