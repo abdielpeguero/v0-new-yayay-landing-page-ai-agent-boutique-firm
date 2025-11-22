@@ -203,11 +203,11 @@ const translations = {
     },
     solutions: {
       title: "What We Build",
-      subtitle: "End‑to‑end intelligent agents engineered for impact.",
+      subtitle: "End-to-end intelligent agents designed to drive real impact.",
       items: [
         {
           title: "Support Agents",
-          desc: "Resolve inquiries, triage tickets, and deflect FAQs with verified knowledge.",
+          desc: "Resolve queries, triage tickets, and deflect FAQs with verified knowledge.",
           tags: ["Retrieval", "Tools", "Guardrails", "HITL"],
         },
         {
@@ -218,17 +218,89 @@ const translations = {
         {
           title: "Ops Automation",
           desc: "Orchestrate back-office tasks and data pipelines across systems.",
-          tags: ["RPA", "ETL", "Webhooks"],
+          tags: ["API", "Orchestration", "Workflow"],
         },
         {
-          title: "R&D Agents",
-          desc: "Synthesize research, draft briefs, and monitor signals with precision.",
-          tags: ["Search", "Citations", "Tracking"],
+          title: "Research Agents",
+          desc: "Aggregate, summarize, and synthesize information from internal or external sources.",
+          tags: ["RAG", "Summarization", "Synthesis"],
         },
         {
-          title: "Internal Tools",
-          desc: "Decision support, dashboards, and workflow copilots for teams.",
-          tags: ["Dashboards", "Approvals", "RBAC"],
+          title: "Custom Workflows",
+          desc: "Build multi-step, multi-agent systems tailored to your use case.",
+          tags: ["Chain-of-Thought", "Modular", "Scalable"],
+        },
+      ],
+    },
+    services: {
+      title: "Our Services",
+      subtitle: "Comprehensive AI solutions tailored to your business needs",
+      categories: [
+        {
+          title: "AI Consulting & Strategy",
+          description: "Strategic guidance for AI adoption and implementation",
+          icon: "network",
+          details: [
+            "AI maturity audits and readiness assessments",
+            "Corporate AI strategy aligned with business objectives",
+            "Ethics and regulatory compliance advisory",
+            "Economic impact evaluation and ROI measurement",
+          ],
+        },
+        {
+          title: "Custom Agentic Solutions",
+          description: "Tailored AI models and intelligent systems",
+          icon: "robot",
+          details: [
+            "Predictive machine learning models",
+            "Computer vision for quality control and automation",
+            "Natural language processing and chatbots",
+            "Intelligent automation (RPA + AI) with self-learning capabilities",
+          ],
+        },
+        {
+          title: "Generative AI Products",
+          description: "Conversational AI and content generation systems",
+          icon: "chatbot",
+          details: [
+            "Enterprise chatbots integrated with CRM systems",
+            "AI-powered content generation for text, images, and video",
+            "Intelligent translation and localization",
+            "Voice and vision agents for customer service",
+          ],
+        },
+        {
+          title: "Advanced Analytics & Data Science",
+          description: "Data-driven insights and predictive modeling",
+          icon: "analytics",
+          details: [
+            "Predictive models and customer segmentation",
+            "Anomaly detection for security and operations",
+            "Data mining, cleansing, and structuring",
+            "Real-time dashboards and analysis systems",
+          ],
+        },
+        {
+          title: "AI-Integrated Web & Mobile Platforms",
+          description: "Intelligent applications and user interfaces",
+          icon: "platform",
+          details: [
+            "Real-time intelligent dashboards",
+            "Mobile apps with voice, text, and image recognition",
+            "Interactive interfaces with integrated chatbots",
+            "API integrations with GPT, Vision, and Speech models",
+          ],
+        },
+        {
+          title: "AI Training & Education",
+          description: "Upskilling teams for the AI-driven future",
+          icon: "education",
+          details: [
+            "Customized enterprise workshops and bootcamps",
+            "Executive presentations on AI trends and ethics",
+            "Technical training in ML, deep learning, and data analysis",
+            "Online courses and personalized learning resources",
+          ],
         },
       ],
     },
@@ -408,13 +480,13 @@ const translations = {
   es: {
     nav: {
       solutions: "Soluciones",
-      aboutUs: "Acerca de Nosotros", // Changed from "Cómo funciona" to "Acerca de Nosotros"
+      aboutUs: "Nosotros", // Changed from "Cómo funciona" to "Nosotros"
       integrations: "Integraciones",
       security: "Seguridad",
       outcomes: "Resultados",
       bookDemo: "Reservar demo",
       liveDemo: "Demo en Vivo",
-      signIn: "Iniciar Sesión", // Added for the Navbar update
+      signIn: "Iniciar sesión", // Added for the Navbar update
       pricing: "Precios", // Added for the Navbar update
     },
     hero: {
@@ -468,17 +540,89 @@ const translations = {
         {
           title: "Automatización de Ops",
           desc: "Orquesta tareas de back-office y pipelines de datos entre sistemas.",
-          tags: ["RPA", "ETL", "Webhooks"],
+          tags: ["API", "Orquestación", "Flujo"],
         },
         {
-          title: "Agentes de I+D",
-          desc: "Sintetiza investigación, redacta informes y monitorea señales con precisión.",
-          tags: ["Búsqueda", "Citas", "Seguimiento"],
+          title: "Agentes de Investigación",
+          desc: "Agrega, resume y sintetiza información de fuentes internas o externas.",
+          tags: ["RAG", "Resumen", "Síntesis"],
         },
         {
-          title: "Herramientas Internas",
-          desc: "Soporte de decisiones, paneles y copilotos de flujo de trabajo para equipos.",
-          tags: ["Paneles", "Aprobaciones", "RBAC"],
+          title: "Flujos Personalizados",
+          desc: "Construye sistemas multi-agente y multi-paso adaptados a tu caso de uso.",
+          tags: ["Cadena de Pensamiento", "Modular", "Escalable"],
+        },
+      ],
+    },
+    services: {
+      title: "Nuestros Servicios",
+      subtitle: "Soluciones integrales de IA adaptadas a las necesidades de su negocio",
+      categories: [
+        {
+          title: "Consultoría y Estrategia en IA",
+          description: "Orientación estratégica para la adopción e implementación de IA",
+          icon: "network",
+          details: [
+            "Auditorías de madurez tecnológica y diagnósticos de preparación",
+            "Diseño de estrategias de IA alineadas con objetivos de negocio",
+            "Asesoramiento en ética y cumplimiento regulatorio",
+            "Evaluación de impacto económico y medición de ROI",
+          ],
+        },
+        {
+          title: "Desarrollo de Soluciones Agénticas Personalizadas",
+          description: "Modelos de IA y sistemas inteligentes a medida",
+          icon: "robot",
+          details: [
+            "Modelos de machine learning predictivos",
+            "Visión por computadora para control de calidad y automatización",
+            "Procesamiento de lenguaje natural y chatbots",
+            "Automatización inteligente (RPA + IA) con auto-aprendizaje",
+          ],
+        },
+        {
+          title: "Productos Conversacionales Generativos",
+          description: "IA conversacional y sistemas de generación de contenido",
+          icon: "chatbot",
+          details: [
+            "Chatbots empresariales integrados con sistemas CRM",
+            "Generación de contenido con IA para texto, imagen y video",
+            "Traducción y localización inteligente",
+            "Agentes de voz y visión para atención al cliente",
+          ],
+        },
+        {
+          title: "Analítica Avanzada y Ciencia de Datos",
+          description: "Insights basados en datos y modelado predictivo",
+          icon: "analytics",
+          details: [
+            "Modelos predictivos y segmentación de clientes",
+            "Detección de anomalías para seguridad y operaciones",
+            "Minería, limpieza y estructuración de datos",
+            "Dashboards y sistemas de análisis en tiempo real",
+          ],
+        },
+        {
+          title: "Plataformas Web y Apps con IA Integrada",
+          description: "Aplicaciones inteligentes e interfaces de usuario",
+          icon: "platform",
+          details: [
+            "Dashboards inteligentes en tiempo real",
+            "Apps móviles con reconocimiento de voz, texto e imágenes",
+            "Interfaces interactivas con chatbots integrados",
+            "Integraciones con APIs de GPT, Vision y Speech",
+          ],
+        },
+        {
+          title: "Formación y Divulgación en Inteligencia Artificial",
+          description: "Capacitación de equipos para el futuro impulsado por IA",
+          icon: "education",
+          details: [
+            "Talleres empresariales personalizados y bootcamps técnicos",
+            "Charlas ejecutivas sobre tendencias de IA y ética",
+            "Entrenamiento técnico en ML, deep learning y análisis de datos",
+            "Cursos en línea y recursos educativos personalizados",
+          ],
         },
       ],
     },
@@ -817,6 +961,9 @@ export default function Page() {
         <Section id="solutions">
           <SolutionsOverview t={t.solutions} />
         </Section>
+        <Section id="services" className="py-24">
+          <Services t={t.services} />
+        </Section>
         <Section id="demo">
           <LiveDemo t={t.demo} />
         </Section>
@@ -980,7 +1127,7 @@ function Navbar({
             {language === "en" ? "ES" : "EN"}
           </Button>
 
-          {/* Updated CTA button to use t.nav.bookDemo */}
+          {/* Changed to use t.bookDemo instead of t.nav.bookDemo */}
           <Button
             asChild
             className="bg-gradient-to-r from-[#2DE0CB] to-[#5B7CEF] text-[#0A0E14] hover:bg-teal-500 bg-teal-400"
@@ -990,6 +1137,7 @@ function Navbar({
         </div>
 
         <div className="flex md:hidden items-center gap-3 py-3">
+          {/* Changed to use t.bookDemo instead of t.nav.bookDemo */}
           <Button
             asChild
             size="sm"
@@ -1847,19 +1995,31 @@ function SecurityCompliance({ t }: { t: typeof translations.en.security }) {
           const icons = [
             <Shield key="shield" className="h-8 w-8" />,
             <Lock key="lock" className="h-8 w-8" />,
-            <svg key="globe" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg
+              key="globe"
+              className="h-8 w-8"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={1.5}
                 d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>,
-            <svg key="users" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg
+              key="users"
+              className="h-8 w-8"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={1.5}
                 d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
               />
             </svg>,
@@ -2431,5 +2591,148 @@ function ArchitectureCard({ variant = "default" }: { variant?: "default" | "bala
         </div>
       </div>
     </div>
+  )
+}
+
+function Services({ t }: { t: typeof translations.en.services }) {
+  const iconMap = {
+    network: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="2" />
+        <circle cx="6" cy="6" r="2" />
+        <circle cx="18" cy="6" r="2" />
+        <circle cx="6" cy="18" r="2" />
+        <circle cx="18" cy="18" r="2" />
+        <line x1="12" y1="10" x2="12" y2="6" />
+        <line x1="10.5" y1="11.5" x2="7.5" y2="7.5" />
+        <line x1="13.5" y1="11.5" x2="16.5" y2="7.5" />
+        <line x1="10.5" y1="12.5" x2="7.5" y2="16.5" />
+        <line x1="13.5" y1="12.5" x2="16.5" y2="16.5" />
+      </svg>
+    ),
+    robot: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="5" y="11" width="14" height="10" rx="2" />
+        <circle cx="9" cy="15" r="1" />
+        <circle cx="15" cy="15" r="1" />
+        <path d="M9 18h6" />
+        <path d="M12 3v5" />
+        <circle cx="12" cy="3" r="1" />
+      </svg>
+    ),
+    chatbot: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        <circle cx="9" cy="10" r="1" />
+        <circle cx="15" cy="10" r="1" />
+        <path d="M9 14c.5.5 2 1 3 1s2.5-.5 3-1" />
+      </svg>
+    ),
+    analytics: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 3v2m0 14v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M3 12h2m14 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" />
+      </svg>
+    ),
+    platform: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="3" y="3" width="18" height="14" rx="2" />
+        <path d="M8 21h8" />
+        <path d="M12 17v4" />
+      </svg>
+    ),
+    education: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+      </svg>
+    ),
+  }
+
+  return (
+    <motion.div {...fadeUp(0)} className="mx-auto max-w-[1200px] px-6 md:px-8">
+      <div className="mb-16 text-center">
+        <h2 className="text-center text-base/7 font-semibold text-[#2DE0CB]">{t.title}</h2>
+        <p className="mx-auto mt-2 max-w-2xl text-center text-3xl font-medium tracking-tight text-balance text-white sm:text-4xl">
+          {t.subtitle}
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {t.categories.map((service, index) => (
+          <motion.div
+            key={service.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1, duration: 0.5 }}
+            whileHover={{ scale: 1.02, y: -4 }}
+            className="group relative"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-[#2DE0CB]/10 via-transparent to-[#5B7CEF]/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+            <Card className="h-full border border-white/10 bg-white/5 backdrop-blur-sm hover:border-[#5B7CEF]/50 transition-all duration-300">
+              <CardHeader className="pb-3">
+                <div className="relative mx-auto mb-4 flex h-20 w-20 items-center justify-center">
+                  <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-30 rounded-lg" />
+                  <div className="relative flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#2DE0CB]/20 to-[#5B7CEF]/20 rounded-lg border border-white/10 text-[#2DE0CB] group-hover:text-[#5B7CEF] transition-colors">
+                    {iconMap[service.icon as keyof typeof iconMap]}
+                  </div>
+                </div>
+                <CardTitle className="text-center text-lg text-slate-200 group-hover:text-white transition-colors">
+                  {service.title}
+                </CardTitle>
+                <p className="text-center text-sm text-slate-400 mt-2">{service.description}</p>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  {service.details.map((detail, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
+                      <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gradient-to-r from-[#2DE0CB] to-[#5B7CEF]" />
+                      <span className="leading-relaxed">{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+      </div>
+    </motion.div>
+  )
+}
+
+function ScrollToTop() {
+  const prefersReducedMotion = useReducedMotion()
+  const [showScrollTop, setShowScrollTop] = React.useState(false)
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300) // Show after scrolling 300px
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" })
+  }
+
+  return (
+    <AnimatePresence>
+      {showScrollTop && (
+        <motion.button
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.2 }}
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-[#0A0E14]/80 transition delay-10 duration-300 ease-in-out hover:bg-[#192333]/80 backdrop-blur text-slate-300 hover:text-white hover:bg-[#0A0E14]/90 transition-colors"
+          aria-label="Scroll to top"
+        >
+          <ChevronUp className="h-5 w-5" />
+        </motion.button>
+      )}
+    </AnimatePresence>
   )
 }
