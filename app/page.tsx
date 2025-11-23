@@ -1177,7 +1177,9 @@ function Navbar({
   ]
 
   const handleNavClick = (hash: string) => {
-    onNav(`#${hash}`)
+    console.log("[v0] Mobile nav clicked, hash:", hash)
+    console.log("[v0] Calling onNav with:", hash)
+    onNav(hash)
     setIsMobileMenuOpen(false)
   }
 
