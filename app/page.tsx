@@ -1273,7 +1273,7 @@ function Navbar({
                   href={`#${item.hash}`}
                   onClick={(e) => {
                     e.preventDefault()
-                    setIsMobileMenuOpen(false)
+                    handleNavClick(item.hash)
                   }}
                   className={`px-4 py-3 rounded-lg text-sm transition-colors ${
                     activeSection === item.hash
