@@ -2104,10 +2104,13 @@ function UseCases({ t }: { t: typeof translations.en.useCases }) {
       strokeWidth="1.5"
     >
       <path
-        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+        d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+      <circle cx="9" cy="10" r="1" />
+      <circle cx="15" cy="10" r="1" />
+      <path d="M9 14c.5.5 2 1 3 1s2.5-.5 3-1" />
     </svg>,
     // Icon 4: Operational Intelligence (Atom/Network)
     <svg
@@ -2171,7 +2174,7 @@ function UseCases({ t }: { t: typeof translations.en.useCases }) {
                     <h3 className="mb-3 text-lg font-semibold text-slate-100">{useCase.title}</h3>
                     <ul className="space-y-2 flex-1">
                       {useCase.points.map((point, pointIndex) => (
-                        <li key={pointIndex} className="flex items-start gap-2 text-sm text-slate-300">
+                        <li key={pointIndex} className="flex items-start gap-2 text-sm text-slate-400">
                           <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#2DE0CB]" />
                           <span>{point}</span>
                         </li>
@@ -2719,27 +2722,28 @@ function ListItem({ children }: React.PropsWithChildren) {
 function MockTerminal() {
   const fullText = `$ yuyay agents upgrade --env=prod > Checking versioning, pulling latest...
 
-    > Integrations connected: CRM, Billing API, Knowledge Hub, Observability...`
+> Integrations connected: CRM, Billing API, Knowledge Hub, Observability...`
 
   const [displayedText, setDisplayedText] = React.useState("")
   const [currentIndex, setCurrentIndex] = React.useState(0)
+
+  const isMobile = typeof window !== "undefined" ? window.matchMedia("(max-width: 840px)").matches : false
 
   React.useEffect(() => {
     if (currentIndex < fullText.length) {
       const timeout = setTimeout(() => {
         setDisplayedText(fullText.slice(0, currentIndex + 1))
         setCurrentIndex(currentIndex + 1)
-      }, 30) // Typing speed in milliseconds
+      }, 30)
       return () => clearTimeout(timeout)
-    } else {
-      // Pause at the end before restarting
+    } else if (!isMobile) {
       const resetTimeout = setTimeout(() => {
         setDisplayedText("")
         setCurrentIndex(0)
-      }, 5000) // Pause duration before restart
+      }, 5000)
       return () => clearTimeout(resetTimeout)
     }
-  }, [currentIndex, fullText])
+  }, [currentIndex, fullText, isMobile])
 
   return (
     <div className="rounded-xl border border-white/10 bg-[#0B1220] p-4">
